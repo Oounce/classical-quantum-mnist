@@ -34,6 +34,11 @@ Each file consists of creating the dataset of measurements in single-pixel exper
 ### Models architecture
 
 - Classical classifier
+<table>
+    <tr>
+        <td> ![My_image](for_readme/cl_class_arc.png) </td>
+        <td>"single-pixel images" (64 measurements in Hadamard patterns basis) were classified using fully-connected linear network</td>
+</table>
 - Classical reconstruction
 - Quantum classifier
 - Quantum reconstruction
