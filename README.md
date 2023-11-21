@@ -35,25 +35,33 @@ Each file consists of creating the dataset of measurements in single-pixel exper
 
 - Classical classifier
 
-Text
+For the classic solution, fully connected linear neural networks were used. The architecture of the classifier consists of two hidden layers (128 and 10 neurons, respectively, that is, 9610 trainable parameters). Cross-Entropy loss was used as a metric for the classification task.
+
+Other parameters: number of epochs – 6, activation function – ReLu, optimizer – Adam, learning rate – 0.001
 
 <p align="center"><img src="for_readme/cl_class_arc.png" height="200" align="center"></p>
 
 - Classical reconstruction
 
-Text
+The architecture consists of five hidden layers (1000, 2000, 4000, 2000 and 1024 neurons, that is, 20,122,024 trainable parameters). MSE was used as a metric for the regression problem of image restoration.
+
+Other parameters: number of epochs – 6, activation function – ReLu, optimizer – Adam, learning rate – 0.001
 
 <p align="center"><img src="for_readme/cl_rec_arc.png" height="300" align="center"></p>
 
 - Quantum classifier
 
-Text
+To develop the quantum algorithm for classifying “single-pixel images” using quantum neural networks the variational quantum circuit was created. The circuit consists of 6 qubits (log2 64), where “single-pixel image” can be encoded using amplitude embedding, 6 layers of the same type with different trainable parameters (in total 1090 angles of qubits rotations - trainable parameters) and one measurement of the observable on first qubit. This circuit is a binary classifier that determines the probability of our data to belong to one of the classes or to all others (it solves a binary problem, where 1 means belonging to this class, -1 to some of the others). Thus, for classification into 10 classes, we need 10 binary classifiers, each has its own set of parameters and training independently of the others.
+
+Other parameters: number of epochs – 3, loss function – Margin loss, margin = 0.15, optimizer – Adam, learning rate – 0.01
 
 <p align="center"><img src="for_readme/q_class_arc.png" width="600" align="center"></p>
 
 - Quantum reconstruction
 
-Text
+For the task of quantum image reconstruction, the architecture of a variational quantum circuit was assumed consisting of 10 qubits, 6 of which were initialized in a state defined as AmplitudeEmbedding(measurements) and the others in zero state, so we can measure the probabilities for each state, which are 1024 numbers.
+
+Other parameters: number of epochs – 1, loss function – MSE, optimizer – Adam, learning rate – 0.01
 
 <p align="center"><img src="for_readme/q_rec_arc.png" width="600" align="center"></p>
 
