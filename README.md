@@ -13,11 +13,11 @@ Here you can find four jupyther notebooks written in python. Every library you n
     </tr>
     <tr>
         <td>Classical_Classification_with_noise.ipynb</td>
-        <td>"single-pixel images" (64 measurements in Hadamard patterns basis) were classified using fully-connected linear network</td>
+        <td>"single-pixel images" (64 measurements in Hadamard patterns basis) were classified using fully-connected network</td>
     </tr>
     <tr>
         <td>Classical_Reconstruction.ipynb</td>
-        <td>"single-pixel images" were reconstrusted by the fully-connected linear network</td>
+        <td>"single-pixel images" were reconstrusted by the fully-connected network</td>
     </tr>
     <tr>
         <td>Quantum_Classification.ipynb</td>
@@ -70,6 +70,6 @@ Other parameters: number of epochs – 1, loss function – MSE, optimizer – A
 - the classical classifier showed an accuracy of 97% after six training epochs
 - the quantum classifier showed an accuracy of 93% after three (because simulating is too long) training epochs
 - image reconstruction using a classical neural network showed 7% mean square error after six training epochs
-- the quntum neural network for reconstructing didn't show good results. I assume that this is due to dense encoding and trying to relate probability measurements to image pixels. Measurements of this type turn out to be highly correlated as a result of calculations, since the qubits in the circuit become entangled. Thus, the model turned out to be unsuitable for solving such a problem.
+- the quantum neural network for reconstructing didn't show good results. I assume that this is due to dense encoding and trying to relate probability measurements to image pixels. Measurements of this type turn out to be highly correlated as a result of calculations, since the qubits in the circuit become entangled. Thus, the model turned out to be unsuitable for solving such a problem.
 
 **Here you can find the more detailed results of the research:** 
