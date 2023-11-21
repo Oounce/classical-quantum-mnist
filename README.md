@@ -35,17 +35,17 @@ Each file consists of creating the dataset of measurements in single-pixel exper
 
 - Classical classifier
 
-For the classic solution, fully connected linear neural networks were used. The architecture of the classifier consists of two hidden layers (128 and 10 neurons, respectively, that is, 9610 trainable parameters). Cross-Entropy loss was used as a metric for the classification task.
+For the classic solution, fully connected linear neural networks were used. The architecture of the classifier consists of two hidden layers (128 and 10 neurons, respectively, that is, 9610 trainable parameters).
 
-Other parameters: number of epochs – 6, activation function – ReLu, optimizer – Adam, learning rate – 0.001
+Other parameters: number of epochs – 6, loss function - Cross-Entropy loss, activation function – ReLu, optimizer – Adam, learning rate – 0.001
 
 <p align="center"><img src="for_readme/cl_class_arc.png" height="200" align="center"></p>
 
 - Classical reconstruction
 
-The architecture consists of five hidden layers (1000, 2000, 4000, 2000 and 1024 neurons, that is, 20,122,024 trainable parameters). MSE was used as a metric for the regression problem of image restoration.
+The architecture consists of five hidden layers (1000, 2000, 4000, 2000 and 1024 neurons, that is, 20,122,024 trainable parameters).
 
-Other parameters: number of epochs – 6, activation function – ReLu, optimizer – Adam, learning rate – 0.001
+Other parameters: number of epochs – 6, loss function MSE, activation function – ReLu, optimizer – Adam, learning rate – 0.001
 
 <p align="center"><img src="for_readme/cl_rec_arc.png" height="300" align="center"></p>
 
