@@ -2,7 +2,7 @@
 
 Single-pixel cameras can be a great solution for the light outside of the visible spectrum. In combination with machine learning, they will allow to quickly obtain images for the practical applications. In the future of the development of quantum technologies, quantum computers can further speed up the solution of such problems. In this work we simulated a single-pixel detection experiment using Hadamard basis patterns, where images from the MNIST are used as objects. 64 measurements (6% of the number of pixels in the image) with maximum variance were selected. The algorithms for classifying and reconstucting images in single-pixel experiment using classical fully connected neural networks and quantum variational circuits were created. Quantum neural networks were used for the first time to solve this type of problem.
 
-## Repository and models description
+## Repository description
 
 Here you can find four jupyther notebooks written in python. Every library you need need will be installed in notebooks, except torch.
 
@@ -31,17 +31,31 @@ Here you can find four jupyther notebooks written in python. Every library you n
 
 Each file consists of creating the dataset of measurements in single-pixel experiment from the MNIST, model and training (with loss plot).
 
-### Models architecture
+## Models architecture and description
 
 - Classical classifier
-<table>
-    <tr>
-        <td> ![My_image](for_readme/cl_class_arc.png) </td>
-        <td>"single-pixel images" (64 measurements in Hadamard patterns basis) were classified using fully-connected linear network</td>
-</table>
+
+Text
+
+<p align="center"><img src="for_readme/cl_class_arc.png" height="200" align="center"></p>
+
 - Classical reconstruction
+
+Text
+
+<p align="center"><img src="for_readme/cl_rec_arc.png" height="300" align="center"></p>
+
 - Quantum classifier
+
+Text
+
+<p align="center"><img src="for_readme/q_class_arc.png" width="600" align="center"></p>
+
 - Quantum reconstruction
+
+Text
+
+<p align="center"><img src="for_readme/q_rec_arc.png" width="600" align="center"></p>
 
 ## Research results
 
@@ -50,4 +64,4 @@ Each file consists of creating the dataset of measurements in single-pixel exper
 - image reconstruction using a classical neural network showed 7% mean square error after six training epochs
 - the quntum neural network for reconstructing didn't show good results. I assume that this is due to dense encoding and trying to relate probability measurements to image pixels. Measurements of this type turn out to be highly correlated as a result of calculations, since the qubits in the circuit become entangled. Thus, the model turned out to be unsuitable for solving such a problem.
 
-**Here you can find the more detailed results of the study:** 
+**Here you can find the more detailed results of the research:** 
