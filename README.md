@@ -72,4 +72,4 @@ Other parameters: number of epochs – 1, loss function – MSE, optimizer – A
 - image reconstruction using a classical neural network showed 7% mean square error after six training epochs
 - the quantum neural network for reconstructing didn't show good results. I assume that this is due to dense encoding and trying to relate probability measurements to image pixels. Measurements of this type turn out to be highly correlated as a result of calculations, since the qubits in the circuit become entangled. Thus, the model turned out to be unsuitable for solving such a problem.
 
-**Here you can find the more detailed results of the research:** 
+**Here you can find the more detailed results of the research:** [soon]
