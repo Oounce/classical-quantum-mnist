@@ -62,7 +62,7 @@ Other parameters: number of epochs – 3, loss function – Margin loss, margin 
 - Quantum reconstruction [PennyLane]
 
 Because of the long traing on the quantum simulator we decide to use a little part of the MNIST dataset (640 images of zeros and 640 of ones).
-For the task of quantum image reconstruction, it was developed the architecture of a variational quantum circuit consisting of 10 qubits, 6 of which were initialized in a state defined as AmplitudeEmbedding(measurements) and the others in zero state. After [NUMBER] real amplitude layers (consisting only of Ry and CNOT gates) the state of the system was measured (which is the 1024 numbers - pixels of the image), in total it used [NUMBER] trainable parameters.
+For the task of quantum image reconstruction, it was developed the architecture of a variational quantum circuit consisting of 10 qubits, 6 of which were initialized in a state defined as AmplitudeEmbedding(measurements) and the others in zero state. After [NUMBER] real amplitude layers (consisting only of Ry(angle) and CNOT gates) the state of the system was measured (which is the 1024 numbers - pixels of the image), in total it used [NUMBER] trainable parameters.
 
 Other parameters: number of epochs – 10, loss function – CosineSimilarity, optimizer – Adam, learning rate – 0.5
 
