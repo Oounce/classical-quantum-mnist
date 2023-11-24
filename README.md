@@ -13,7 +13,7 @@ Here you can find four jupyther notebooks written in python. Every library you n
     </tr>
     <tr>
         <td>Classical_Classification_with_noise.ipynb</td>
-        <td>"single-pixel images" (64 measurements in Hadamard patterns basis) were classified using fully-connected network</td>
+        <td>"single-pixel images" (64 measurements in Hadamard patterns basis) were classified using fully-connected network. Here you can also set the noise level of the simulated measurements </td>
     </tr>
     <tr>
         <td>Classical_Reconstruction.ipynb</td>
