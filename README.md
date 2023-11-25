@@ -55,9 +55,7 @@ To develop the quantum algorithm for classifying “single-pixel images” using
 
 Other parameters: number of epochs – 3, loss function – Margin loss, margin = 0.15, optimizer – Adam, learning rate – 0.01
 
-[CHANGE IMAGE]
-
-<p align="center"><img src="for_readme/q_class_arc.png" width="600" align="center"></p>
+<p align="center"><img src="for_readme/q_class_arc.PNG" width="300" align="center"></p>
 
 - Quantum reconstruction [PennyLane]
 
@@ -66,9 +64,7 @@ For the task of quantum image reconstruction, it was developed the architecture 
 
 Other parameters: number of epochs – 10, loss function – CosineSimilarity, optimizer – Adam, learning rate – 0.5
 
-[CHANGE IMAGE]
-
-<p align="center"><img src="for_readme/q_rec_arc.png" width="600" align="center"></p>
+<p align="center"><img src="for_readme/q_rec_arc.PNG" width="300" align="center"></p>
 
 ## Research results
 
