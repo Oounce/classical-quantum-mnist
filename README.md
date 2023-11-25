@@ -74,12 +74,12 @@ Other parameters: number of epochs – 10, loss function – CosineSimilarity, o
 
 - The classical classifier showed an accuracy of 97% after six training epochs
 - The quantum classifier showed an accuracy of 93% after three (because quantum simulating is too long) training epochs
-- The true and recovered from different number of measurements images using classical neural network:
+- The true and recovered from different number of measurements images using classical neural network (from top to bottom - (1) true, (2) 1024, (3) 64, (4) 1):
 
-[IMAGE]
+<p align="center"><img src="for_readme/cl_res.png" width="600" align="center"></p>
 
-- The true and recovered images using classical neural network and different loss types:
+- The true and recovered images using quantum neural network with different number of layers (from top to bottom - (1) true, (2) 10, (3) 20, (4) 30):
 
-[IMAGE]
+<p align="center"><img src="for_readme/q_res.png" width="300" align="center"></p>
 
 **Here you can find the more detailed results of the research:** [SOON]
