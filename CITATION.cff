@@ -19,12 +19,12 @@ preferred-citation:
       - type: other
         value: "arXiv:2407.12506"
         description: The ArXiv preprint of the paper
-other: arXiv:2407.12506
-#doi: "10.0000/00000"
-#journal: "Journal Title"
-# start: 1 # First page number
-# end: 10 # Last page number
-title: "Classification and reconstruction of images in the problem single-pixel imaging using classical and quantum neural networks"
-# issue: 1
-# volume: 1
-year: 2024
+  other: arXiv:2407.12506
+  #doi: "10.0000/00000"
+  #journal: "Journal Title"
+  # start: 1 # First page number
+  # end: 10 # Last page number
+  title: "Classification and reconstruction of images in the problem single-pixel imaging using classical and quantum neural networks"
+  # issue: 1
+  # volume: 1
+  year: 2024
