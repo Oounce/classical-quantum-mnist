@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "If you use this code or research results please cite it as below."
+authors:
+- family-names: "Manko"
+  given-names: "Sofya"
+  #orcid: "https://orcid.org/0000-0000-0000-0000"
+title: "Single pixel imaging with classical and quantum neutral networks"
+url: "https://github.com/Oounce/classical-quantum-mnist"
+preferred-citation:
+  type: generic #article
+  authors:
+  - family-names: "Manko"
+    given-names: "Sofya"
+    #orcid: "https://orcid.org/0000-0000-0000-0000"
+  - family-names: "Frolovtsev"
+    given-names: "Dmitriy"
+    # orcid: "https://orcid.org/0000-0000-0000-0000"
+  #doi: "10.0000/00000"
+  #journal: "Journal Title"
+  identifiers:
+    - type: other
+      value: "arXiv:2407.12506"
+      description: The ArXiv preprint of the paper
+  month: 7
+  # start: 1 # First page number
+  # end: 10 # Last page number
+  title: "Classification and reconstruction of images in the problem single-pixel imaging using classical and quantum neural networks"
+  # issue: 1
+  # volume: 1
+  year: 2024
