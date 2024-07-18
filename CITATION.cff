@@ -17,11 +17,11 @@ preferred-citation:
     # orcid: "https://orcid.org/0000-0000-0000-0000"
   #doi: "10.0000/00000"
   #journal: "Journal Title"
+  other: "arXiv:2407.12506"
   identifiers:
     - type: other
       value: "arXiv:2407.12506"
       description: The ArXiv preprint of the paper
-  month: 7
   # start: 1 # First page number
   # end: 10 # Last page number
   title: "Classification and reconstruction of images in the problem single-pixel imaging using classical and quantum neural networks"
