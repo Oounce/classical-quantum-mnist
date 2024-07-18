@@ -4,28 +4,33 @@ Single-pixel cameras can be a great solution for the light outside of the visibl
 
 ## Repository description
 
-Here you can find four jupyther notebooks written in python. Every library you need is installed in notebooks.
+For installing project dependencies use:
 
+```
+pip install -r requirements.txt
+```
+
+Here you can find four jupyther notebooks written in python.
 <table>
     <tr>
         <th>Filename</th>
         <th>Description</th>
     </tr>
     <tr>
-        <td>Classical_Classification_with_noise.ipynb</td>
-        <td>"single-pixel images" (64 measurements in Hadamard patterns basis) were classified using fully-connected network. Here you can also set the noise level of the simulated measurements </td>
+        <td>[./Classical_Classification.ipynb](./Classical_Classification.ipynb)</td>
+        <td>"Single-pixel images" (measurements in Hadamard patterns basis) were classified using fully-connected network. The dependence of it's result on the number of measurements in the input layer of the neural network was studied.</td>
     </tr>
     <tr>
         <td>Classical_Reconstruction.ipynb</td>
-        <td>"single-pixel images" were reconstrusted by the fully-connected network</td>
+        <td>"Single-pixel images" were reconstrusted by the fully-connected network and studied the result. The quality of reconstruction depending on the number of measurements was studied.</td>
     </tr>
     <tr>
         <td>Quantum_Classification.ipynb</td>
-        <td>"single-pixel images" were classified using quantum neural network (variational quantum circuits)</td>
+        <td>"Single-pixel images" were classified using quantum neural network (variational quantum circuits).</td>
     </tr>
     <tr>
         <td>Quantum_Reconstruction_dense.ipynb</td>
-        <td>"single-pixel images" were reconstructed by the quantum neural network</td>
+        <td>"Single-pixel images" were reconstructed by the quantum neural network.</td>
     </tr>
 </table>
 
@@ -33,25 +38,25 @@ Each file consists of creating the dataset of measurements in single-pixel exper
 
 ## Models architecture and description
 
-- Classical classifier [PyTorch]
+- **Classical classifier [PyTorch]**
 
-For the classic solution, fully connected linear neural networks were used. The architecture of the classifier consists of two hidden layers (128 and 10 neurons, respectively, that is, 9610 trainable parameters).
+For the classic solution, fully connected linear neural networks were used. The architecture of the classifier consists of one hidden layers of 128 neurons, which is 9610 trainable parameters.
 
-Other parameters: number of epochs – 6, loss function - Cross-Entropy loss, activation function – ReLu, optimizer – Adam, learning rate – 0.001
+Other parameters: number of epochs – 6, loss function - Cross-Entropy loss, activation function – ReLu, optimizer – Adam, learning rate – 0.0001
 
 <p align="center"><img src="for_readme/cl_class_arc.png" height="200" align="center"></p>
 
 - Classical reconstruction [PyTorch]
 
-The architecture consists of five hidden layers (1000, 2000, 4000, 2000 and 1024 neurons, that is, 20,122,024 trainable parameters).
+The architecture consists of four hidden layers (1000, 2000, 4000 and 2000 neurons, that is, 20,122,024 trainable parameters).
 
-Other parameters: number of epochs – 6, loss function MSE, activation function – ReLu, optimizer – Adam, learning rate – 0.001
+Other parameters: number of epochs – 6, loss function - MSE, activation function – ReLu, optimizer – Adam, learning rate – 0.0001
 
 <p align="center"><img src="for_readme/cl_rec_arc.png" height="300" align="center"></p>
 
 - Quantum classifier [PennyLane]
 
-To develop the quantum algorithm for classifying “single-pixel images” using quantum neural networks the variational quantum circuit was created. The circuit consists of 6 qubits (log2 64), where “single-pixel image” can be encoded using amplitude embedding, 6 strongly entangled layers (consisting of Rot(angle_1, angle_2, angle_3) and CNOT gates) with different trainable parameters (108 angles of qubits rotations) and one measurement of the Pauli-Z observable of first qubit. This circuit is a binary classifier that determines the probability of our data to belong to one of the classes or to all others (it solves a binary problem, where 1 means belonging to this class, -1 to some of the others). Thus, for classification into 10 classes, we need 10 binary classifiers, each has its own set of parameters and trains independently of the others (in total 1090 trainable parameters, (108 angles + 1 bias) x 10).
+To develop the quantum algorithm for classifying “single-pixel images” using quantum neural networks the variational quantum circuit was created. The circuit consists of 6 qubits (log<sub>2</sub>64), where “single-pixel image” can be encoded using amplitude embedding, 6 strongly entangled layers (consisting of Rot(angle_1, angle_2, angle_3) and CNOT gates) with different trainable parameters (108 angles of qubits rotations) and one measurement of the Pauli-Z observable of first qubit. This circuit is a binary classifier that determines the probability of our data to belong to one of the classes or to all others (it solves a binary problem, where 1 means belonging to this class, -1 to some of the others). Thus, for classification into 10 classes, we need 10 binary classifiers, each has its own set of parameters and trains independently of the others (in total 1090 trainable parameters, (108 angles + 1 bias) x 10).
 
 Other parameters: number of epochs – 3, loss function – Margin loss, margin = 0.15, optimizer – Adam, learning rate – 0.01
 
@@ -68,14 +73,14 @@ Other parameters: number of epochs – 10, loss function – CosineSimilarity, o
 
 ## Research results
 
-- The classical classifier showed an accuracy of 97% after six training epochs
-- The quantum classifier showed an accuracy of 93% after three (because quantum simulating is too long) training epochs
-- The true and recovered from different number of measurements images using classical neural network (from top to bottom - (1) true, (2) 1024, (3) 64, (4) 1):
+- The classical classifier showed an accuracy of 96% after six training epochs
+- The quantum classifier showed an accuracy of 95% after six training epochs
+- The target and recovered from different number of measurements images using classical neural network (from top to bottom - (1) true, (2) 1024, (3) 64, (4) 1):
 
 <p align="center"><img src="for_readme/cl_res.png" width="600" align="center"></p>
 
-- The true and recovered images using quantum neural network with different number of layers (from top to bottom - (1) true, (2) 10, (3) 20, (4) 30):
+- The target and recovered images using quantum neural network with different number of layers (from top to bottom - (1) true, (2) 10, (3) 20, (4) 30):
 
 <p align="center"><img src="for_readme/q_res.png" width="300" align="center"></p>
 
-**Here you can find the more detailed results of the research:** [SOON]
+**Here you can find the more detailed results of the research:** https://arxiv.org/abs/2407.12506
