@@ -29,7 +29,7 @@ Here you can find four jupyther notebooks written in python.
         <td>"Single-pixel images" were classified using quantum neural network (variational quantum circuits).</td>
     </tr>
     <tr>
-        <td>Quantum_Reconstruction_dense.ipynb</td>
+        <td>Quantum_Reconstruction.ipynb</td>
         <td>"Single-pixel images" were reconstructed by the quantum neural network.</td>
     </tr>
 </table>
