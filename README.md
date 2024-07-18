@@ -6,7 +6,7 @@ Single-pixel cameras can be a great solution for the light outside of the visibl
 
 For installing project dependencies use:
 
-```
+```bash
 pip install -r requirements.txt
 ```
 
@@ -38,38 +38,38 @@ Each file consists of creating the dataset of measurements in single-pixel exper
 
 ## Models architecture and description
 
-- **Classical classifier [PyTorch]**
+- <span style="font-size:1.25em;">**Classical classifier [PyTorch]**</span>
 
-For the classic solution, fully connected linear neural networks were used. The architecture of the classifier consists of one hidden layers of 128 neurons, which is 9610 trainable parameters.
-
+For the classic solution, fully connected linear neural networks were used. The architecture of the classifier consists of one hidden layers of 128 neurons, which is 9610 trainable parameters. \
 Other parameters: number of epochs – 6, loss function - Cross-Entropy loss, activation function – ReLu, optimizer – Adam, learning rate – 0.0001
 
 <p align="center"><img src="for_readme/cl_class_arc.png" height="200" align="center"></p>
+&nbsp;
 
-- Classical reconstruction [PyTorch]
+- <span style="font-size:1.25em;">**Classical reconstruction [PyTorch]**</span>
 
-The architecture consists of four hidden layers (1000, 2000, 4000 and 2000 neurons, that is, 20,122,024 trainable parameters).
-
+The architecture consists of four hidden layers (1000, 2000, 4000 and 2000 neurons, that is, 20,122,024 trainable parameters). \
 Other parameters: number of epochs – 6, loss function - MSE, activation function – ReLu, optimizer – Adam, learning rate – 0.0001
 
 <p align="center"><img src="for_readme/cl_rec_arc.png" height="300" align="center"></p>
+&nbsp;
 
-- Quantum classifier [PennyLane]
+- <span style="font-size:1.25em;">**Quantum classifier [PennyLane]**</span>
 
-To develop the quantum algorithm for classifying “single-pixel images” using quantum neural networks the variational quantum circuit was created. The circuit consists of 6 qubits (log<sub>2</sub>64), where “single-pixel image” can be encoded using amplitude embedding, 6 strongly entangled layers (consisting of Rot(angle_1, angle_2, angle_3) and CNOT gates) with different trainable parameters (108 angles of qubits rotations) and one measurement of the Pauli-Z observable of first qubit. This circuit is a binary classifier that determines the probability of our data to belong to one of the classes or to all others (it solves a binary problem, where 1 means belonging to this class, -1 to some of the others). Thus, for classification into 10 classes, we need 10 binary classifiers, each has its own set of parameters and trains independently of the others (in total 1090 trainable parameters, (108 angles + 1 bias) x 10).
-
+To develop the quantum algorithm for classifying “single-pixel images” using quantum neural networks the variational quantum circuit was created. The circuit consists of 6 qubits (log<sub>2</sub>64), where “single-pixel image” can be encoded using amplitude embedding, 6 strongly entangled layers (consisting of Rot(angle_1, angle_2, angle_3) and CNOT gates) with different trainable parameters (108 angles of qubits rotations) and one measurement of the Pauli-Z observable of first qubit. This circuit is a binary classifier that determines the probability of our data to belong to one of the classes or to all others (it solves a binary problem, where 1 means belonging to this class, -1 to some of the others). Thus, for classification into 10 classes, we need 10 binary classifiers, each has its own set of parameters and trains independently of the others (in total 1090 trainable parameters, (108 angles + 1 bias) x 10). \
 Other parameters: number of epochs – 3, loss function – Margin loss, margin = 0.15, optimizer – Adam, learning rate – 0.01
 
 <p align="center"><img src="for_readme/q_class_arc.PNG" width="300" align="center"></p>
+&nbsp;
 
-- Quantum reconstruction [PennyLane]
+- <span style="font-size:1.25em;">**Quantum reconstruction [PennyLane]**</span>
 
 Because of the long traing on the quantum simulator we decide to use a little part of the MNIST dataset (640 images of zeros and 640 of ones).
-For the task of quantum image reconstruction, it was developed the architecture of a variational quantum circuit consisting of 10 qubits, 6 of which were initialized in a state defined as AmplitudeEmbedding(measurements) and the others in zero state. After 30 real amplitude layers (consisting only of Ry(angle) and CNOT gates) the state of the system was measured (which is the 1024 numbers - pixels of the image), in total it used 300 trainable parameters.
-
+For the task of quantum image reconstruction, it was developed the architecture of a variational quantum circuit consisting of 10 qubits, 6 of which were initialized in a state defined as AmplitudeEmbedding(measurements) and the others in zero state. After 30 real amplitude layers (consisting only of Ry(angle) and CNOT gates) the state of the system was measured (which is the 1024 numbers - pixels of the image), in total it used 300 trainable parameters. \
 Other parameters: number of epochs – 10, loss function – CosineSimilarity, optimizer – Adam, learning rate – 0.5
 
 <p align="center"><img src="for_readme/q_rec_arc.PNG" width="300" align="center"></p>
+&nbsp;
 
 ## Research results
 
@@ -78,9 +78,12 @@ Other parameters: number of epochs – 10, loss function – CosineSimilarity, o
 - The target and recovered from different number of measurements images using classical neural network (from top to bottom - (1) true, (2) 1024, (3) 64, (4) 1):
 
 <p align="center"><img src="for_readme/cl_res.png" width="600" align="center"></p>
+&nbsp;
 
 - The target and recovered images using quantum neural network with different number of layers (from top to bottom - (1) true, (2) 10, (3) 20, (4) 30):
 
 <p align="center"><img src="for_readme/q_res.png" width="300" align="center"></p>
+&nbsp;
 
-**Here you can find the more detailed results of the research:** https://arxiv.org/abs/2407.12506
+<span style="font-size:1.25em;">**Here you can find the more detailed results of the research:** https://arxiv.org/abs/2407.12506</span> \
+<span style="font-size:1.25em;">[[Cite]](./CITATION.bib)</span>
