@@ -17,7 +17,7 @@ Here you can find four jupyther notebooks written in python.
         <th>Description</th>
     </tr>
     <tr>
-        <td>[./Classical_Classification.ipynb](./Classical_Classification.ipynb)</td>
+        <td>Classical_Classification.ipynb</td>
         <td>"Single-pixel images" (measurements in Hadamard patterns basis) were classified using fully-connected network. The dependence of it's result on the number of measurements in the input layer of the neural network was studied.</td>
     </tr>
     <tr>
