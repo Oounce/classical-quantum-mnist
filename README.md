@@ -22,7 +22,7 @@ Here you can find four jupyther notebooks written in python.
     </tr>
     <tr>
         <td>Classical_Reconstruction.ipynb</td>
-        <td>"Single-pixel images" were reconstrusted by the fully-connected network and studied the result. The quality of reconstruction depending on the number of measurements was studied.</td>
+        <td>"Single-pixel images" were reconstrusted by the fully-connected network. The quality of reconstruction depending on the number of measurements was studied.</td>
     </tr>
     <tr>
         <td>Quantum_Classification.ipynb</td>
@@ -41,7 +41,7 @@ Each file consists of creating the dataset of measurements in single-pixel exper
 - <span style="font-size:1.25em;">**Classical classifier [PyTorch]**</span>
 
 For the classic solution, fully connected linear neural networks were used. The architecture of the classifier consists of one hidden layers of 128 neurons, which is 9610 trainable parameters. \
-Other parameters: number of epochs – 6, loss function - Cross-Entropy loss, activation function – ReLu, optimizer – Adam, learning rate – 0.0001
+Other parameters: number of epochs – 6, loss function - Cross-Entropy loss, activation function – ReLu, optimizer – Adam, learning rate – 0.0001.
 
 <p align="center"><img src="for_readme/cl_class_arc.png" height="200" align="center"></p>
 &nbsp;
@@ -49,26 +49,26 @@ Other parameters: number of epochs – 6, loss function - Cross-Entropy loss, ac
 - <span style="font-size:1.25em;">**Classical reconstruction [PyTorch]**</span>
 
 The architecture consists of four hidden layers (1000, 2000, 4000 and 2000 neurons, that is, 20,122,024 trainable parameters). \
-Other parameters: number of epochs – 6, loss function - MSE, activation function – ReLu, optimizer – Adam, learning rate – 0.0001
+Other parameters: number of epochs – 10, loss function - MSE, activation function – ReLu, optimizer – Adam, learning rate – 0.0001.
 
 <p align="center"><img src="for_readme/cl_rec_arc.png" height="300" align="center"></p>
 &nbsp;
 
 - <span style="font-size:1.25em;">**Quantum classifier [PennyLane]**</span>
 
-To develop the quantum algorithm for classifying “single-pixel images” using quantum neural networks the variational quantum circuit was created. The circuit consists of 6 qubits (log<sub>2</sub>64), where “single-pixel image” can be encoded using amplitude embedding, 6 strongly entangled layers (consisting of Rot(angle_1, angle_2, angle_3) and CNOT gates) with different trainable parameters (108 angles of qubits rotations) and one measurement of the Pauli-Z observable of first qubit. This circuit is a binary classifier that determines the probability of our data to belong to one of the classes or to all others (it solves a binary problem, where 1 means belonging to this class, -1 to some of the others). Thus, for classification into 10 classes, we need 10 binary classifiers, each has its own set of parameters and trains independently of the others (in total 1090 trainable parameters, (108 angles + 1 bias) x 10). \
-Other parameters: number of epochs – 3, loss function – Margin loss, margin = 0.15, optimizer – Adam, learning rate – 0.01
+To develop the quantum algorithm for classifying “single-pixel images” using quantum neural networks the variational quantum circuit was created. The circuit consists of 6 qubits (log<sub>2</sub>64), where “single-pixel image” can be encoded using amplitude embedding, N real amplitude strongly entangling layers (consisting of Ry(angle) and CNOT gates) with different trainable parameters and one measurement of the Pauli-Z observable of first qubit. This circuit is a binary classifier that determines the probability of our data to belong to one of the classes or to all others (it solves a binary problem, where 1 means belonging to this class, -1 to some of the others). Thus, for classification into 10 classes, we need 10 binary classifiers, each has its own set of parameters and trains independently of the others. \
+Other parameters: number of epochs – 6, loss function – Margin loss, margin = 0.15, optimizer – Adam, learning rate – 0.001, N=1,3,6,10,15,30.
 
-<p align="center"><img src="for_readme/q_class_arc.PNG" width="300" align="center"></p>
+<p align="center"><img src="for_readme/class_circuit.PNG" height="300" align="center"></p>
 &nbsp;
 
 - <span style="font-size:1.25em;">**Quantum reconstruction [PennyLane]**</span>
 
 Because of the long traing on the quantum simulator we decide to use a little part of the MNIST dataset (640 images of zeros and 640 of ones).
-For the task of quantum image reconstruction, it was developed the architecture of a variational quantum circuit consisting of 10 qubits, 6 of which were initialized in a state defined as AmplitudeEmbedding(measurements) and the others in zero state. After 30 real amplitude layers (consisting only of Ry(angle) and CNOT gates) the state of the system was measured (which is the 1024 numbers - pixels of the image), in total it used 300 trainable parameters. \
-Other parameters: number of epochs – 10, loss function – CosineSimilarity, optimizer – Adam, learning rate – 0.5
+For the task of quantum image reconstruction, it was developed the architecture of a variational quantum circuit consisting of 10 qubits, 6 of which were initialized in a state defined as AmplitudeEmbedding(measurements) and the others in zero state. After N real amplitude strongly entangling layers probabilities of each possble state of the system were measured (which is the 1024 numbers - pixels of the image). \
+Other parameters: number of epochs – 10, loss function – MSE, optimizer – Adam, learning rate – 0.01, N=10,20,30.
 
-<p align="center"><img src="for_readme/q_rec_arc.PNG" width="300" align="center"></p>
+<p align="center"><img src="for_readme/rec_circuit.PNG" height="300" align="center"></p>
 &nbsp;
 
 ## Research results
