@@ -85,5 +85,6 @@ Other parameters: number of epochs – 10, loss function – MSE, optimizer – 
 <p align="center"><img src="for_readme/q_res.png" width="300" align="center"></p>
 &nbsp;
 
-<span style="font-size:1.25em;">**Here you can find the more detailed results of the research:** https://arxiv.org/abs/2407.12506</span> \
+<span style="font-size:1.25em;">**More detailed results of the research could be found at** https://doi.org/10.1007/s11760-025-03875-5</span> \
+<span style="font-size:1.25em;">**Preprint is avalible at** https://arxiv.org/abs/2407.12506 (This preprint has not undergone peer review or any post-submission improvements or corrections.)</span> \
 <span style="font-size:1.25em;">[[Cite]](./CITATION.bib)</span>
