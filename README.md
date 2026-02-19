@@ -1,5 +1,10 @@
 #  Single pixel imaging with classical and quantum neutral networks [classical-quantum-mnist]
 
+[![Full text](https://img.shields.io/badge/Full_text-Springer_Nature-003652)](https://rdcu.be/d9wvF)
+[![arXiv](https://img.shields.io/badge/arXiv-2407.12506-b31b1b)](https://arxiv.org/abs/2407.12506)
+[![PyTorch](https://img.shields.io/badge/PyTorch->=2.3.1-ee4c2c)](https://pytorch.org/)
+[![PennyLane](https://img.shields.io/badge/PennyLane->=0.36.0-0074e0)](https://pennylane.ai/)
+
 Single-pixel cameras can be a great solution for the light outside of the visible spectrum. In combination with machine learning, they will allow to quickly analyze images for the practical applications. In the future development of quantum technologies, quantum computers can further speed up the solution of such problems. In this work we simulated a single-pixel detection experiment using Hadamard basis patterns, where images from the MNIST are used as objects. 64 measurements (6% of the number of pixels in the image) with maximum variance were selected. The algorithms for classifying and reconstucting images in single-pixel experiment using classical fully connected neural networks and quantum variational circuits were created. Quantum neural networks were used for the first time to solve this type of problem.
 
 ## Repository description
